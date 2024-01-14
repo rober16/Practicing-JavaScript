@@ -24,7 +24,7 @@ function getBookByID(id, callback){
         return callback(error);
     }
 
-    //Si encontro un libro encontes
+    //Si encontro un libro
     callback(null, book);
 }
 
