@@ -19,7 +19,9 @@ Estados de una promesa:
 * Rejected (rechazada): La operación falló, y la promesa tiene un motivo de rechazo.
 
 Uso básico de una promesa:
+*/
 
+//Primer ejemplo
 const miPromesa = new Promise((resolve, reject) => {
   // Simulación de tarea asíncrona
   setTimeout(() => {
@@ -41,8 +43,9 @@ miPromesa
   .catch((error) => {
     console.error("Error:", error);
   });
-*/
 
+
+//Segundo ejemplo
 const books = [
     {
         id: 1,
