@@ -90,7 +90,7 @@ function getBookByID(id){
     })
 }
 
-function getAuthorbyID(id){
+function getAuthorByID(id){
     return new Promise((resolve, reject) => {
         const author = authors.find(author => author.id === id);
 
@@ -104,7 +104,7 @@ function getAuthorbyID(id){
 }
 
 getBookByID(1).then(book => {
-    return getAuthorbyID(book.id);
+    return getAuthorByID(book.id);
 }).then(author => {
     console.log(author);
 }).catch(error => {
