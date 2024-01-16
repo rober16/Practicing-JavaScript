@@ -69,3 +69,61 @@ async function main(){
 }
 
 main();
+
+
+
+
+//Ejemplo 2
+
+function tareaAsync1() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Tarea 1 completada");
+    }, 1000);
+  });
+}
+  
+function tareaAsync2() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Tarea 2 completada");
+    }, 1500);
+  });
+}
+  
+function tareaAsync3() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Tarea 3 completada");
+    }, 2000);
+  });
+}
+
+//Ahora, aplicamos async y await a la cadena de promesas:
+
+//La función ejecutarTareas es declarada como async, lo que permite el uso de await dentro de ella.
+async function ejecutarTareas() {
+  //Cada llamada a tareaAsyncX ahora se coloca después de await.
+  //Esto hace que JavaScript espere a que la promesa se resuelva antes de continuar con la siguiente línea de código.
+  try {
+    const resultado1 = await tareaAsync1();
+    console.log(resultado1);
+
+    const resultado2 = await tareaAsync2();
+    console.log(resultado2);
+
+    const resultado3 = await tareaAsync3();
+    console.log(resultado3);
+
+    console.log("Todas las tareas han sido completadas");
+  } catch (error) {
+    console.error("Al menos una tarea falló:", error);
+  }
+}
+  
+//La estructura de manejo de errores se ha simplificado utilizando un bloque try-catch. 
+//Cualquier error que ocurra dentro de las funciones await será capturado por el bloque catch.
+  
+// Llamamos a la función
+ejecutarTareas();
+  
