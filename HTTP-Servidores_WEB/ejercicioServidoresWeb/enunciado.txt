@@ -1,0 +1,8 @@
+El ejercicio consiste en crear un servidor HTTP que responda con un mensaje "Hola, mundo" cuando se accede a la ruta raíz ("/") y con un mensaje personalizado cuando se accede a una ruta específica.
+
+Enunciado:
+
+1. Crea un archivo llamado server.js.
+2. Utiliza el módulo http para crear un servidor.
+3. El servidor debe responder con "Hola, mundo" cuando se accede a la ruta raíz ("/").
+4. Si se accede a otra ruta (por ejemplo, "/saludo/tu_nombre"), el servidor debe responder con un mensaje personalizado que incluya el nombre proporcionado en la ruta (por ejemplo, "Hola, tu_nombre").
