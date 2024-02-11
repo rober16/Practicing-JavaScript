@@ -71,8 +71,6 @@ async function main(){
 main();
 
 
-
-
 //Ejemplo 2
 
 function tareaAsync1() {
@@ -126,4 +124,3 @@ async function ejecutarTareas() {
   
 // Llamamos a la función
 ejecutarTareas();
-  

@@ -32,7 +32,7 @@ const miPromesa = new Promise((resolve, reject) => {
     } else {
       reject("Hubo un error en la tarea");
     }
-  }, 2000);
+  }, 3000);
 });
 
 // Manejar el resultado usando then y catch
@@ -43,6 +43,7 @@ miPromesa
   .catch((error) => {
     console.error("Error:", error);
   });
+//Esto se llama method chaining
 
 
 //Segundo ejemplo
@@ -110,3 +111,46 @@ getBookByID(1).then(book => {
 }).catch(error => {
     console.log(error.message);
 })
+
+
+/*
+//Ejemplo 3 - encadenar de varias promesas
+
+function ordenarProducto(producto){ // -> operacion asincrona
+  return new Promise((resolve, reject) => {
+    console.log("Ordenado: "+producto);
+    setTimeout( () => {
+      if(producto === "taza"){
+        resolve("Ordenando una taza...");
+      }else{
+        reject("Este producto no esta disponible actualmetne.");
+      }
+    }, 2000);
+  });
+}
+
+function procesarPedido(respuesta){
+  return new Promise((resolve => {
+    console.log("Procesando respuesta...");
+    console.log("La respuesta fue: "+respuesta);
+    setTimeout(() => {
+      resolve("Gracias por su compra!");
+    }, 4000);
+}
+
+//Para que dos procesos asincronos se ejecuten en un orden especifico se hace encadenando las promesas!
+
+ordenarProducto("taza")
+  .then(respuesta => {
+    console.log("Respuesta recibida");
+    console.log(respuesta);
+    return procesarPedido(respuesta); //retornamos la promesa
+  })
+  .then(respuestaProcesada => {  //de nuevo colocar un .then, porque se convierte en una nueva promesa, retornada por procesarPedido, estamos haciendo una cadena de promesas
+    console.log(respuestaProcesada);
+  })
+  .catch(error => {
+    console.log(error);
+  }));
+  //Metodo utilizado: chaining promises
+  */
