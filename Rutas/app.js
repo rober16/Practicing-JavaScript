@@ -80,3 +80,5 @@ const PUERTO = 8080;
 server.listen(PUERTO, () => {
   console.log(`El servidor esta escuchando en el puerto ${PUERTO}...`);
 });
+
+//Documentacion de códigos de estado de respuesta HTTP: https://developer.mozilla.org/es/docs/Web/HTTP/Status
